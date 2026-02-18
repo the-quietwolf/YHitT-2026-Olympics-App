@@ -4,7 +4,7 @@ import re
 import os
 
 # --- CONFIGURATION ---
-st.set_page_config(page_title="2026 Olympic Fantasy Tracker", layout="wide", page_icon="🏒")
+st.set_page_config(page_title="YHitT Milano Cortina 2026 Stats Tracker", layout="wide", page_icon="🏒")
 
 # --- 1. LOAD USER ROSTER (Server Side Only) ---
 # ttl=0 ensures that if you replace the file in the folder, 
@@ -87,7 +87,7 @@ def find_match(roster_name, stats_df):
     return None
 
 # --- MAIN APP UI ---
-st.title("🏒 2026 Olympic Fantasy Hockey Tracker")
+st.title("🥇 🏒 Your Hat's in the Toilet Milano Cortina 2026 Stats Tracker")
 
 # Sidebar: minimal controls
 with st.sidebar:
@@ -139,7 +139,7 @@ else:
     # --- DASHBOARD LAYOUT ---
     
     # 1. LEADERBOARD
-    st.subheader("🏆 🏒 Your Hat's in the Toilet Milano Cortina 2026 Stats Tracker")
+    st.subheader("Leaderboard")
     standings = final_df.groupby("Fantasy_Team")[["Goals", "Assists", "Points"]].sum().sort_values("Points", ascending=False)
     
     st.dataframe(
